@@ -9,40 +9,69 @@
   <link rel="canonical" href="https://signs.thestonestudio.co/">
   <meta property="og:title" content="Stone Studio Signs — Carved, sandblasted and cast stone signage">
   <meta property="og:description" content="Bespoke stone signage designed and made in Cardiff. Carved, sandblasted, gilded lettering for residential, commercial and civic projects across the UK.">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"></noscript>
   <style>
     :root{--bg:#F6F3EE;--bg-s:#EAE7E1;--fg:#191713;--mid:#7D7267;--rule:#D4CFCA;--stone:#8C7C6A}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-    h1{font-size:clamp(2.6rem,5.5vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.03em;color:var(--fg);font-family:'Inter',sans-serif}
-    h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.08;letter-spacing:-0.025em;color:var(--fg);font-family:'Inter',sans-serif}
+    h1{font-size:clamp(2.6rem,5.5vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.03em;color:#fff}
+    h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.08;letter-spacing:-0.025em;color:var(--fg)}
     h3{font-size:0.95rem;font-weight:500;color:var(--fg);letter-spacing:0.01em}
     p{color:var(--mid);line-height:1.8;font-size:0.94rem}
     a{color:inherit;text-decoration:none}
     .label{font-size:0.78rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:14px}
     .c{max-width:1280px;margin:0 auto;padding:0 64px}
     @media(max-width:768px){.c{padding:0 24px}}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;background:rgba(246,243,238,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s,border-color 0.3s;border-bottom:1px solid transparent}
     @media(max-width:768px){nav{padding:14px 24px}}
+    nav.sc{background:rgba(246,243,238,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--rule)}
     .nav-logo{display:block;line-height:0}
-    .nav-logo svg{width:530px;height:auto}
-    .nav-links{display:flex;gap:32px;list-style:none}
-    @media(max-width:960px){.nav-links{display:none}}
-    .nav-links a{font-size:0.78rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);transition:color 0.2s}
-    .nav-links a:hover{color:var(--fg)}
-    .nav-cta{font-size:0.62rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--fg);border-bottom:1px solid var(--fg);padding-bottom:2px;transition:opacity 0.2s}
+    .nav-logo svg{width:clamp(180px,38vw,429px);height:auto;transition:color 0.2s}
+    nav:not(.sc) .nav-logo svg{color:rgba(255,255,255,0.9)}
+    nav.sc .nav-logo svg{color:var(--fg)}
+    .nav-back{font-size:0.58rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.35);padding:8px 16px;color:rgba(255,255,255,0.88);transition:all 0.2s}
+    .nav-back:hover{background:rgba(255,255,255,0.15)}
+    nav.sc .nav-back{border-color:var(--rule);color:var(--mid)}
+    nav.sc .nav-back:hover{border-color:var(--fg);color:var(--fg);background:transparent}
+    @media(max-width:520px){.nav-back{display:none}}
+    .nav-links{display:flex;gap:32px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+    .nav-links a{font-size:0.78rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;transition:color 0.2s}
+    nav:not(.sc) .nav-links a{color:rgba(255,255,255,0.75)}
+    nav:not(.sc) .nav-links a:hover{color:#fff}
+    nav.sc .nav-links a{color:var(--mid)}
+    nav.sc .nav-links a:hover{color:var(--fg)}
+    .nav-cta{font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding-bottom:2px;transition:opacity 0.2s}
+    nav:not(.sc) .nav-cta{color:rgba(255,255,255,0.9);border-bottom:1px solid rgba(255,255,255,0.5)}
+    nav.sc .nav-cta{color:var(--fg);border-bottom:1px solid var(--fg)}
     .nav-cta:hover{opacity:0.55}
-    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:63px}
-    @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}}
-    .hero-text{display:flex;flex-direction:column;justify-content:center;padding:88px 80px 88px 64px}
-    @media(max-width:900px){.hero-text{padding:56px 24px 48px}}
-    .hero-text h1{margin:14px 0 20px;font-family:'Inter',sans-serif}
-    .hero-text p{font-size:1rem;max-width:340px;color:var(--mid)}
-    .hero-photo{background-size:cover;background-position:center;min-height:520px}
-    @media(max-width:900px){.hero-photo{min-height:58vw;order:-1}}
+    .nav-right{display:flex;gap:16px;align-items:center}
+    .nav-burger{display:none;background:none;border:none;cursor:pointer;padding:4px 6px;line-height:1;transition:opacity 0.2s,color 0.2s}
+    nav:not(.sc) .nav-burger{color:rgba(255,255,255,0.88);text-shadow:0 1px 3px rgba(0,0,0,0.55)}
+    nav.sc .nav-burger{color:var(--fg)}
+    .nav-burger:hover{opacity:0.65}
+    @media(max-width:1400px){.nav-burger{display:block}}
+    @media(max-width:1400px){.nav-links{display:none}}
+    nav.nav-open{flex-wrap:wrap;padding-bottom:20px}
+    nav.nav-open .nav-links{display:flex!important;position:static!important;transform:none!important;left:auto!important;width:100%;order:10;flex-direction:column;gap:14px;border-top:1px solid rgba(255,255,255,0.3);margin-top:14px;padding-top:16px}
+    nav.nav-open.sc .nav-links{border-top-color:var(--rule)}
+    nav.nav-open .nav-links li a{font-size:0.8rem;letter-spacing:0.2em}
+    nav.nav-open:not(.sc) .nav-links li a{color:rgba(255,255,255,0.88)}
+    nav.nav-open:not(.sc) .nav-links li a:hover{color:#fff;opacity:1}
+    nav.nav-open.sc .nav-links li a{color:var(--mid)}
+    nav.nav-open.sc .nav-links li a:hover{color:var(--fg)}
+    .hero-video{position:relative;height:100vh;min-height:560px;overflow:hidden;background:#1a1714}
+    .hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.72}
+    .hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+    .hero-content{padding:0 64px;max-width:780px;text-align:center}
+    @media(max-width:768px){.hero-content{padding:0 24px}}
+    .hero-content .label{color:rgba(255,255,255,0.65)}
+    .hero-content p{color:rgba(255,255,255,0.88);font-size:1.05rem;font-weight:500;margin-top:18px;max-width:480px;margin-left:auto;margin-right:auto}
     .photo-strip{display:grid;gap:3px;background:var(--bg-s)}
-    .photo-strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(0.97)}
+    .photo-strip img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(0.97)}
     section{padding:104px 0}
     @media(max-width:768px){section{padding:72px 0}}
     .bt{border-top:1px solid var(--rule)}
@@ -51,38 +80,20 @@
     @media(max-width:900px){.two-col{grid-template-columns:1fr;gap:36px}}
     .two-col p{margin-bottom:18px}
     .two-col p:last-child{margin-bottom:0}
-    .stats{display:flex;gap:48px;margin-top:40px;padding-top:32px;border-top:1px solid var(--rule)}
-    @media(max-width:600px){.stats{gap:28px}}
-    .stat-n{font-size:2rem;font-weight:300;color:var(--fg);letter-spacing:-0.03em;line-height:1;display:block}
-    .stat-l{font-size:0.58rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);display:block;margin-top:4px}
-    .div-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);margin-top:52px}
-    @media(max-width:1100px){.div-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:580px){.div-grid{grid-template-columns:1fr}}
-    .div-card{background:var(--bg);padding:40px 28px 36px;display:block;transition:background 0.25s}
-    .div-card:hover{background:var(--bg-s)}
-    .div-card .label{margin-bottom:10px}
-    .div-title{font-size:0.9rem;font-weight:500;color:var(--fg);margin-bottom:10px}
-    .div-desc{font-size:0.8rem;color:var(--mid);line-height:1.7;margin-bottom:22px}
-    .div-link{font-size:0.58rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)}
     .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:56px}
     @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:580px){.svc-grid{grid-template-columns:1fr}}
-    .svc{background:var(--bg-s);padding:36px 28px}
+    .svc{background:var(--bg-s);overflow:hidden}
+    .svc img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block}
+    .svc-body{padding:24px 28px 28px}
     .svc h3{margin-bottom:8px}
     .svc p{font-size:0.82rem;line-height:1.72}
-    .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:56px}
-    @media(max-width:900px){.pillar-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:580px){.pillar-grid{grid-template-columns:1fr}}
-    .pillar{background:var(--bg-s);padding:40px 28px}
-    .pillar-n{font-size:0.58rem;font-weight:500;letter-spacing:0.22em;color:var(--stone);margin-bottom:16px;display:block}
-    .pillar h3{font-size:0.95rem;font-weight:500;margin-bottom:8px}
-    .pillar p{font-size:0.82rem;line-height:1.72}
     .cta-s{text-align:center}
-    .cta-s h2{max-width:580px;margin:14px auto 14px;font-family:'Inter',sans-serif}
+    .cta-s h2{max-width:580px;margin:14px auto 14px}
     .cta-s p{max-width:420px;margin:0 auto 36px;font-size:0.95rem}
     .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .btn{display:inline-block;font-size:0.6rem;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;padding:13px 36px;border:1px solid var(--fg);color:var(--fg);transition:all 0.2s}
-    .btn:hover{border-color:var(--fg);color:var(--fg);background:var(--bg)}
+    .btn:hover{background:var(--fg);color:var(--bg)}
     .btn-ghost{border-color:var(--rule);color:var(--mid)}
     .btn-ghost:hover{border-color:var(--fg);color:var(--fg);background:transparent}
     footer{padding:32px 0;border-top:1px solid var(--rule)}
@@ -91,23 +102,18 @@
     .foot-links{display:flex;gap:24px}
     .foot-links a{font-size:0.62rem;color:var(--stone);letter-spacing:0.14em;text-transform:uppercase;transition:color 0.2s}
     .foot-links a:hover{color:var(--fg)}
-</style>
+  </style>
 </head>
 <body>
+
   <nav id="nav">
-    <a href="/" class="nav-logo"><svg viewBox="0 0 456 101">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #231f20;
-        }
-    </style>
-  </defs>
+    <a href="/" class="nav-logo"><svg viewBox="0 0 460 102" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Stone Studio Signs">
+  <defs><style>.cls-1{fill:currentColor}</style></defs>
   <g id="Layer_1-2" data-name="Layer 1">
     <g>
       <g>
         <g>
-          <path class="cls-1" d="M307.38,19.31c-.81-.39-1.81-.76-2.99-1.1-1.18-.34-2.36-.51-3.54-.51-1.84,0-3.31.46-4.41,1.38-1.1.92-1.65,2.07-1.65,3.46,0,0.5.32,1.92.95,2.62.63.7,1.46,1.29,2.48,1.77,1.02.49,2.11.95,3.27,1.4.92.34,1.83.72,2.74,1.14s1.73.93,2.46,1.54,1.32,1.35,1.75,2.24c.43.89.65,2,.65,3.31,0,1.55-.37,2.92-1.1,4.11-.73,1.19-1.76,2.12-3.07,2.78s-2.83.98-4.57.98c-1.39,0-2.66-.17-3.8-.51-1.14-.34-2.14-.74-2.99-1.2-.85-.46-1.53-.85-2.03-1.16l.91-1.57c.58.42,1.28.84,2.11,1.26.83.42,1.73.77,2.7,1.06.97.29,1.94.43,2.91.43,1.13,0,2.22-.22,3.29-.67s1.94-1.12,2.64-2.03,1.04-2.05,1.04-3.44-.33-2.42-.98-3.25c-.66-.83-1.5-1.5-2.52-2.03-1.02-.52-2.11-1-3.27-1.42-.89-.34-1.79-.7-2.68-1.08-.89-.38-1.71-.84-2.44-1.38-.74-.54-1.32-1.19-1.75-1.95-.43-.76-.65-1.68-.65-2.76,0-1.34.34-2.5,1.02-3.5.68-1,1.61-1.78,2.78-2.34,1.17-.56,2.5-.86,4-.89,1.31,0,2.64.17,4,.51s2.53.77,3.52,1.3l-.75,1.5Z"/>
+          <path class="cls-1" d="M307.38,19.31c-.81-.39-1.81-.76-2.99-1.1-1.18-.34-2.36-.51-3.54-.51-1.84,0-3.31.46-4.41,1.38-1.1.92-1.65,2.07-1.65,3.46,0,1.05.32,1.92.95,2.62.63.7,1.46,1.29,2.48,1.77,1.02.49,2.11.95,3.27,1.4.92.34,1.83.72,2.74,1.14s1.73.93,2.46,1.54,1.32,1.35,1.75,2.24c.43.89.65,2,.65,3.31,0,1.55-.37,2.92-1.1,4.11-.73,1.19-1.76,2.12-3.07,2.78s-2.83.98-4.57.98c-1.39,0-2.66-.17-3.8-.51-1.14-.34-2.14-.74-2.99-1.2-.85-.46-1.53-.85-2.03-1.16l.91-1.57c.58.42,1.28.84,2.11,1.26.83.42,1.73.77,2.7,1.06.97.29,1.94.43,2.91.43,1.13,0,2.22-.22,3.29-.67s1.94-1.12,2.64-2.03,1.04-2.05,1.04-3.44-.33-2.42-.98-3.25c-.66-.83-1.5-1.5-2.52-2.03-1.02-.52-2.11-1-3.27-1.42-.89-.34-1.79-.7-2.68-1.08-.89-.38-1.71-.84-2.44-1.38-.74-.54-1.32-1.19-1.75-1.95-.43-.76-.65-1.68-.65-2.76,0-1.34.34-2.5,1.02-3.5.68-1,1.61-1.78,2.78-2.34,1.17-.56,2.5-.86,4-.89,1.31,0,2.64.17,4,.51s2.53.77,3.52,1.3l-.75,1.5Z"/>
           <path class="cls-1" d="M318.56,16.16h18.3v1.85h-8.23v26.1h-1.93v-26.1h-8.15v-1.85Z"/>
           <path class="cls-1" d="M349.81,34.66c0,1.63.33,3.03,1,4.21.67,1.18,1.58,2.09,2.74,2.74,1.15.64,2.47.96,3.94.96s2.83-.32,4-.96c1.17-.64,2.09-1.56,2.76-2.74s1-2.58,1-4.21v-18.5h1.89v18.62c0,2.02-.43,3.75-1.28,5.2-.85,1.44-2.01,2.54-3.46,3.31-1.46.76-3.09,1.14-4.9,1.14s-3.44-.38-4.9-1.14c-1.46-.76-2.6-1.86-3.44-3.31s-1.26-3.17-1.26-5.2v-18.62h1.93v18.5Z"/>
           <path class="cls-1" d="M380.4,44.11v-27.95h6.89c2.7,0,5.01.43,6.91,1.28,1.9.85,3.44,1.97,4.62,3.37,1.18,1.39,2.05,2.91,2.6,4.57.55,1.65.83,3.29.83,4.92,0,2.13-.37,4.04-1.1,5.73s-1.74,3.14-3.01,4.35c-1.27,1.21-2.72,2.13-4.35,2.77-1.63.64-3.35.96-5.16.96h-8.23ZM382.33,42.26h5.79c1.68,0,3.25-.28,4.72-.83,1.47-.55,2.76-1.35,3.88-2.4,1.12-1.05,1.99-2.32,2.62-3.8s.95-3.17.95-5.06c0-1.6-.27-3.13-.81-4.58-.54-1.46-1.34-2.75-2.42-3.88-1.08-1.13-2.4-2.02-3.98-2.68-1.58-.66-3.41-.98-5.51-.98h-5.24v24.21Z"/>
@@ -130,36 +136,46 @@
         <path class="cls-1" d="M223.52,70.69c-.73-.4-1.46-.73-2.21-.98s-1.45-.39-2.11-.39c-.81,0-1.45.16-1.92.49-.47.33-.7.82-.7,1.48,0,.45.18.85.53,1.2.35.35.81.67,1.37.95.56.28,1.14.53,1.75.75.55.21,1.1.45,1.64.74.54.28,1.03.64,1.46,1.06s.78.95,1.04,1.58c.26.63.39,1.4.39,2.32,0,.97-.25,1.86-.75,2.69-.5.83-1.24,1.5-2.2,2.01-.97.51-2.16.76-3.57.76-.72,0-1.46-.07-2.21-.22s-1.49-.37-2.21-.67c-.73-.3-1.42-.69-2.1-1.15l1.66-2.93c.45.33.94.62,1.46.87.53.25,1.06.44,1.59.58.54.14,1.03.21,1.48.21s.9-.06,1.36-.19c.46-.13.84-.35,1.14-.66s.45-.74.45-1.29c0-.38-.12-.73-.38-1.04-.25-.31-.59-.6-1.01-.85-.42-.26-.88-.48-1.39-.67-.59-.22-1.19-.48-1.81-.78-.62-.29-1.2-.65-1.75-1.07s-.98-.95-1.32-1.58c-.34-.63-.5-1.4-.5-2.32,0-1.11.25-2.06.74-2.88s1.19-1.45,2.08-1.93c.9-.47,1.93-.74,3.11-.79,1.54,0,2.78.18,3.74.54.96.36,1.82.79,2.58,1.29l-1.42,2.87Z"/>
       </g>
     </g>
-    <polygon points="101.25 45.38 101.25 7.56 86.96 21.84 79.56 14.43 93.99 0 55.86 0 55.86 18.13 45.38 18.13 45.38 0 7.47 0 21.75 14.28 14.34 21.69 0 7.35 0 45.38 18.13 45.38 18.13 55.86 0 55.86 0 93.99 14.32 79.67 21.73 87.08 7.56 101.24 45.38 101.24 45.38 83.11 55.86 83.11 55.86 101.24 93.9 101.24 79.55 86.9 86.95 79.49 101.25 93.78 101.25 55.86 83.11 55.86 83.11 45.38 101.25 45.38"/>
+    <polygon class="cls-1" points="101.25 45.38 101.25 7.56 86.96 21.84 79.56 14.43 93.99 0 55.86 0 55.86 18.13 45.38 18.13 45.38 0 7.47 0 21.75 14.28 14.34 21.69 0 7.35 0 45.38 18.13 45.38 18.13 55.86 0 55.86 0 93.99 14.32 79.67 21.73 87.08 7.56 101.24 45.38 101.24 45.38 83.11 55.86 83.11 55.86 101.24 93.9 101.24 79.55 86.9 86.95 79.49 101.25 93.78 101.25 55.86 83.11 55.86 83.11 45.38 101.25 45.38"/>
   </g>
 </svg></a>
-    <ul class="nav-links"><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#contact">Contact</a></li></ul>
-    <div style="display:flex;gap:16px;align-items:center"><a href="https://stone-studio-mu.vercel.app" class="btn-ghost" style="font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;border:1px solid var(--rule);padding:8px 16px;color:var(--mid);transition:all 0.2s">&#8592; Stone Studio</a><a href="mailto:hello@stonesign.co.uk" class="nav-cta">Enquire</a></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://stone-studio-mu.vercel.app" class="nav-back">&#8592; Stone Studio</a>
+      <a href="mailto:hello@stonesign.co.uk" class="nav-cta">Enquire</a>
+      <button class="nav-burger" id="burger" aria-label="Open navigation menu" aria-expanded="false">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+          <rect y="0" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="7" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="14" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-text">
-      <span class="label">Stone Studio · Signs</span>
-      <h1>The <span style="font-weight:700">face</span> of your building,
-set in <span style="font-weight:700">stone.</span></h1>
-      <p>Stone signage for residential, commercial and civic projects.</p>
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="none" poster="a7.jpg">
+      <source src="header.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="label">Stone Studio &middot; Signs</span>
+        <h1>The face of your building,<br><span style="font-weight:600">set in stone.</span></h1>
+        <p>Stone signage for residential, commercial and civic projects.</p>
+      </div>
     </div>
-    <div class="hero-photo" style="background-image:url('a7.jpg')"></div>
-  </section>
-
-  <div class="photo-strip" aria-hidden="true" style="grid-template-columns:repeat(4,1fr)">
-    <img src="6.jpg" alt="" loading="lazy">
-    <img src="15.jpg" alt="" loading="lazy">
-    <img src="16.jpg" alt="" loading="lazy">
-    <img src="21.jpg" alt="" loading="lazy">
   </div>
 
-  <section class="bt" id="work">
+  <section id="work" class="bt">
     <div class="c">
       <div class="two-col">
         <div>
           <span class="label">Signs</span>
-          <h2>Made to <span style="font-weight:700">mark.</span> Built to <span style="font-weight:700">last.</span></h2>
+          <h2>Made to mark. Built to last.</h2>
         </div>
         <div>
           <p>From a single house name to a hotel entrance, we design and produce stone signage that earns its place on a building for generations. Carved, sandblasted, gilded or cast &mdash; every technique, one workshop.</p>
@@ -169,17 +185,60 @@ set in <span style="font-weight:700">stone.</span></h1>
     </div>
   </section>
 
+  <div class="photo-strip" style="grid-template-columns:repeat(4,1fr)">
+    <img src="6.jpg" alt="Stone sign detail" width="800" height="800" loading="lazy" decoding="async">
+    <img src="15.jpg" alt="Carved stone lettering" width="800" height="800" loading="lazy" decoding="async">
+    <img src="16.jpg" alt="Bespoke stone signage" width="800" height="800" loading="lazy" decoding="async">
+    <img src="21.jpg" alt="Stone Studio Signs work" width="800" height="800" loading="lazy" decoding="async">
+  </div>
+
   <section class="bg-s bt" id="services">
     <div class="c">
       <span class="label">Services</span>
-      <h2>What we <span style="font-weight:700">make</span></h2>
+      <h2>What we make</h2>
       <div class="svc-grid">
-        <div class="svc"><h3>Architectural name plates</h3><p>Building name panels, entrance stones and facade-mounted signage for commercial and residential developments.</p></div>
-        <div class="svc"><h3>House names &amp; numbers</h3><p>Carved slate, limestone and granite for private residences. Bespoke lettering, standard or gilded finish.</p></div>
-        <div class="svc"><h3>Sandblasted &amp; gilded lettering</h3><p>Deep-cut sandblasted text with paint or gold-leaf infill. The most durable letter technique available in stone.</p></div>
-        <div class="svc"><h3>Wayfinding &amp; directional</h3><p>Multi-panel wayfinding systems for campuses, estates, hotels and public realm. Stone with longevity beyond any other material.</p></div>
-        <div class="svc"><h3>Cast stone &amp; reconstituted</h3><p>For period restoration, conservation projects or situations where natural stone isn&rsquo;t practical. Matched to sample.</p></div>
-        <div class="svc"><h3>Commemoration panels</h3><p>Foundation stones, opening plaques and building record panels. Permanent, dignified and made to outlast the building.</p></div>
+        <div class="svc">
+          <img src="svc-architectural-name-plates.jpg" alt="Architectural name plates in stone" width="600" height="600" loading="lazy" decoding="async">
+          <div class="svc-body">
+            <h3>Architectural name plates</h3>
+            <p>Building name panels, entrance stones and facade-mounted signage for commercial and residential developments.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <img src="svc-house-names.jpg" alt="House names and numbers in stone" width="600" height="600" loading="lazy" decoding="async">
+          <div class="svc-body">
+            <h3>House names &amp; numbers</h3>
+            <p>Carved slate, limestone and granite for private residences. Bespoke lettering, standard or gilded finish.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <img src="svc-sandblasted.jpg" alt="Sandblasted and gilded stone lettering" width="600" height="600" loading="lazy" decoding="async">
+          <div class="svc-body">
+            <h3>Sandblasted &amp; gilded lettering</h3>
+            <p>Deep-cut sandblasted text with paint or gold-leaf infill. The most durable letter technique available in stone.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <img src="svc-wayfinding.jpg" alt="Wayfinding and directional stone signs" width="600" height="600" loading="lazy" decoding="async">
+          <div class="svc-body">
+            <h3>Wayfinding &amp; directional</h3>
+            <p>Multi-panel wayfinding systems for campuses, estates, hotels and public realm. Stone with longevity beyond any other material.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <img src="svc-cast-stone.jpg" alt="Cast stone and reconstituted stone signs" width="600" height="600" loading="lazy" decoding="async">
+          <div class="svc-body">
+            <h3>Cast stone &amp; reconstituted</h3>
+            <p>For period restoration, conservation projects or situations where natural stone isn&rsquo;t practical. Matched to sample.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <img src="svc-commemoration.jpg" alt="Commemorative stone panels" width="600" height="600" loading="lazy" decoding="async">
+          <div class="svc-body">
+            <h3>Commemoration panels</h3>
+            <p>Foundation stones, opening plaques and building record panels. Permanent, dignified and made to outlast the building.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -187,7 +246,7 @@ set in <span style="font-weight:700">stone.</span></h1>
   <section class="bt cta-s" id="contact">
     <div class="c">
       <span class="label">Start a conversation</span>
-      <h2>Tell us about your <span style="font-weight:700">project.</span></h2>
+      <h2>Tell us about your project.</h2>
       <p>We&rsquo;ll work out together where we fit.</p>
       <div class="cta-row">
         <a href="mailto:hello@stonesign.co.uk" class="btn">hello@stonesign.co.uk</a>
@@ -200,7 +259,11 @@ set in <span style="font-weight:700">stone.</span></h1>
     <div class="c">
       <div class="foot">
         <span class="foot-note">Stone Studio Signs &middot; A division of Stone Studio &middot; Cardiff</span>
-        <div class="foot-links"><a href="#services">Services</a><a href="#contact">Contact</a><a href="https://stone-studio-mu.vercel.app">Stone Studio</a></div>
+        <div class="foot-links">
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <a href="https://stone-studio-mu.vercel.app">Stone Studio</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -208,6 +271,23 @@ set in <span style="font-weight:700">stone.</span></h1>
   <script>
     const nav=document.getElementById('nav');
     window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>50);},{passive:true});
+    const burger=document.getElementById('burger');
+    if(burger){
+      burger.addEventListener('click',()=>{
+        const open=nav.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded',open);
+      });
+      nav.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+        nav.classList.remove('nav-open');
+        burger.setAttribute('aria-expanded','false');
+      }));
+      document.addEventListener('click',(e)=>{
+        if(!nav.contains(e.target)){
+          nav.classList.remove('nav-open');
+          burger.setAttribute('aria-expanded','false');
+        }
+      });
+    }
   </script>
 </body>
 </html>
