@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Journal &mdash; Stone Studio Signs</title>
+  <meta name="description" content="Stories, case studies and perspectives from Stone Studio Signs &mdash; covering bespoke stone business signage, Welsh slate plaques, and wayfinding solutions crafted across the UK.">
+  <meta property="og:title" content="Journal &mdash; Stone Studio Signs">
+  <meta property="og:description" content="Stories, case studies and perspectives from Stone Studio Signs &mdash; covering bespoke stone business signage, Welsh slate plaques, and wayfinding solutions crafted across the UK.">
+  <meta property="og:type" content="website">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Josefin+Sans:wght@300;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Josefin+Sans:wght@300;700&display=swap"></noscript>
+  <style>
+    :root{--bg:#F6F3EE;--bg-s:#EAE7E1;--fg:#191713;--mid:#7D7267;--rule:#D4CFCA;--stone:#8C7C6A}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.label{font-size:0.72rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:12px}
+.c{max-width:1280px;margin:0 auto;padding:0 64px}
+@media(max-width:768px){.c{padding:0 24px}}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s,border-color 0.3s;border-bottom:1px solid transparent}
+@media(max-width:768px){nav{padding:14px 24px}}
+nav.sc{background:rgba(246,243,238,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--rule)}
+.nav-logo{display:block;line-height:0}
+.nav-logo svg{width:clamp(180px,38vw,429px);height:auto;transition:color 0.2s;color:var(--fg)}
+.nav-back{font-size:0.58rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;border:1px solid var(--rule);padding:8px 16px;color:var(--mid);transition:all 0.2s}
+.nav-back:hover{border-color:var(--fg);color:var(--fg)}
+@media(max-width:520px){.nav-back{display:none}}
+.nav-links{display:flex;gap:32px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;transition:color 0.2s;color:var(--mid)}
+.nav-links a:hover,.nav-links a.active{color:var(--fg)}
+.nav-cta{font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding-bottom:2px;color:var(--fg);border-bottom:1px solid var(--fg);transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.55}
+.nav-right{display:flex;gap:16px;align-items:center}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:4px 6px;line-height:1;color:var(--fg);transition:opacity 0.2s}
+.nav-burger:hover{opacity:0.65}
+@media(max-width:1400px){.nav-burger{display:block}.nav-links{display:none}}
+nav.nav-open{flex-wrap:wrap;padding-bottom:20px}
+nav.nav-open .nav-links{display:flex!important;position:static!important;transform:none!important;left:auto!important;width:100%;order:10;flex-direction:column;gap:14px;border-top:1px solid var(--rule);margin-top:14px;padding-top:16px}
+nav.nav-open .nav-links li a{font-size:0.8rem;letter-spacing:0.2em;color:var(--mid)}
+nav.nav-open .nav-links li a:hover{color:var(--fg)}
+footer{padding:32px 0;border-top:1px solid var(--rule)}
+.foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.foot-note{font-size:0.65rem;color:var(--stone);letter-spacing:0.06em}
+.foot-links{display:flex;gap:24px}
+.foot-links a{font-size:0.62rem;color:var(--stone);letter-spacing:0.14em;text-transform:uppercase;transition:color 0.2s}
+.foot-links a:hover{color:var(--fg)}
+    .blog-header{padding:204px 0 72px;border-bottom:1px solid var(--rule)}
+    @media(max-width:768px){.blog-header{padding:165px 0 72px}}
+    .blog-header h1{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:600;line-height:1.1;letter-spacing:-0.025em;color:var(--fg)}
+    .blog-header p{font-size:0.95rem;color:var(--mid);line-height:1.8;margin-top:16px;max-width:480px}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin:64px 0 96px}
+    @media(max-width:1100px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.blog-grid{grid-template-columns:1fr}}
+    .blog-card{background:var(--bg);display:flex;flex-direction:column}
+    .card-img{display:block;overflow:hidden;aspect-ratio:3/2}
+    .card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease}
+    .card-img:hover img{transform:scale(1.03)}
+    .card-body{padding:24px 28px 28px;display:flex;flex-direction:column;flex:1}
+    .card-label{font-size:0.65rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:10px}
+    .card-body h2{font-size:clamp(0.95rem,1.4vw,1.1rem);font-weight:500;line-height:1.3;letter-spacing:-0.005em;margin-bottom:10px}
+    .card-body h2 a{color:var(--fg);transition:opacity 0.2s}
+    .card-body h2 a:hover{opacity:0.65}
+    .card-excerpt{font-size:0.82rem;color:var(--mid);line-height:1.72;flex:1;margin-bottom:20px}
+    .card-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--rule);padding-top:16px;margin-top:auto}
+    .card-foot time{font-size:0.65rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone)}
+    .card-read{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg);transition:opacity 0.2s}
+    .card-read:hover{opacity:0.55}
+  </style>
+</head>
+<body>
+  <nav id="nav" class="sc">
+    <a href="/" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.69 99.93" aria-label="Stone Studio Signs">
+  <g>
+    <g>
+      <g>
+        <text style="font-family:'Josefin Sans',sans-serif;font-size:39.36px;font-weight:300;letter-spacing:.11em;" fill="currentColor" transform="translate(288.92 39.35)"><tspan x="0" y="0">STUDIO</tspan></text>
+        <text style="font-family:'Josefin Sans',sans-serif;font-size:39.36px;font-weight:700;letter-spacing:.11em;" fill="currentColor" transform="translate(124.72 40.07)"><tspan x="0" y="0">STONE</tspan></text>
+      </g>
+      <text style="font-family:'Josefin Sans',sans-serif;font-size:25.9px;font-weight:700;letter-spacing:.2em;" fill="currentColor" transform="translate(124.52 80.38)"><tspan x="0" y="0">SIGNS</tspan></text>
+    </g>
+    <g>
+      <rect fill="currentColor" width="13.76" height="13.6"/>
+      <rect fill="currentColor" y="86.33" width="13.76" height="13.6"/>
+      <rect fill="currentColor" x="87.48" y=".08" width="13.76" height="13.6" transform="translate(87.48 101.24) rotate(-90)"/>
+      <rect fill="currentColor" x="87.48" y="86.08" width="13.76" height="13.6" transform="translate(1.49 187.23) rotate(-90)"/>
+      <rect fill="currentColor" x="30.62" y="29.85" width="40.2" height="40.02"/>
+      <rect fill="currentColor" x="22.05" y=".08" width="57.33" height="13.59"/>
+      <rect fill="currentColor" x="22.05" y="86.08" width="57.33" height="13.59"/>
+      <rect fill="currentColor" x="65.69" y="43.19" width="57.33" height="13.59" transform="translate(44.37 144.35) rotate(-90)"/>
+      <rect fill="currentColor" x="-21.79" y="43.06" width="57.33" height="13.59" transform="translate(-42.98 56.74) rotate(-90)"/>
+    </g>
+  </g>
+</svg></a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/blog/" class="active">Journal</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://stone-studio-mu.vercel.app" class="nav-back">&#8592; Stone Studio</a>
+      <a href="mailto:hello@stonesign.co.uk" class="nav-cta">Enquire</a>
+      <button class="nav-burger" id="burger" aria-label="Open navigation menu" aria-expanded="false">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+          <rect y="0" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="7" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="14" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="blog-header">
+    <div class="c">
+      <span class="label">Stone Studio Signs</span>
+      <h1>Journal</h1>
+      <p>Stories, case studies and perspectives on bespoke stone business signage — Welsh slate plaques, wayfinding, corporate signs, and more.</p>
+    </div>
+  </div>
+  <div class="c">
+    <div class="blog-grid">
+    <div class="blog-card">
+      <a href="/blog/why-stone-signs-are-perfect-for-corporate-offices/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/Braille-Gallery.jpg" alt="Why Stone Signs Are Perfect for Corporate Offices" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/why-stone-signs-are-perfect-for-corporate-offices/">Why Stone Signs Are Perfect for Corporate Offices</a></h2>
+        <p class="card-excerpt">Stone signs stand out as the ultimate expression of quality and craftsmanship for corporate offices — conveying prestige, trust, and permanence from the moment visitors arrive.</p>
+        <div class="card-foot">
+          <time datetime="2025-11-04">4 November 2025</time>
+          <a href="/blog/why-stone-signs-are-perfect-for-corporate-offices/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/why-stone-business-signs-outperform-traditional-signage/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/The-Roost-On-Rock-Road-Welsh-slate-business-plaque-white-enamel-detailing.jpg" alt="Why Stone Business Signs Outperform Traditional Signage" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/why-stone-business-signs-outperform-traditional-signage/">Why Stone Business Signs Outperform Traditional Signage</a></h2>
+        <p class="card-excerpt">Stone business signs offer unparalleled durability, elegance, and practicality that make them a superior alternative to traditional signage options.</p>
+        <div class="card-foot">
+          <time datetime="2025-03-25">25 March 2025</time>
+          <a href="/blog/why-stone-business-signs-outperform-traditional-signage/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/welsh-slate-business-signage-port-of-milford-haven/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/welsh-slate-business-plaque-ship-engraving-scaled.jpg" alt="Welsh Slate Business Signage — Port of Milford Haven" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/welsh-slate-business-signage-port-of-milford-haven/">Welsh Slate Business Signage — Port of Milford Haven</a></h2>
+        <p class="card-excerpt">Bespoke Welsh slate business plaques for the Port of Milford Haven — a statement in natural stone that connects your brand to a rich and enduring legacy.</p>
+        <div class="card-foot">
+          <time datetime="2025-02-27">27 February 2025</time>
+          <a href="/blog/welsh-slate-business-signage-port-of-milford-haven/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/crafting-slate-and-limestone-business-entrance-signs-for-lyla-restaurant/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/lyla-restaurant-entrance-sign.jpg" alt="Crafting Slate & Limestone Business Entrance Signs for Lyla Restaurant" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/crafting-slate-and-limestone-business-entrance-signs-for-lyla-restaurant/">Crafting Slate & Limestone Business Entrance Signs for Lyla Restaurant</a></h2>
+        <p class="card-excerpt">Crafting bespoke stone entrance signs for Lyla restaurant in Edinburgh, using Welsh slate and Portland limestone — a collaboration forged in craftsmanship and creativity.</p>
+        <div class="card-foot">
+          <time datetime="2024-08-13">13 August 2024</time>
+          <a href="/blog/crafting-slate-and-limestone-business-entrance-signs-for-lyla-restaurant/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/stunning-stone-wayfinding-signage-at-parc-mackenzie/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/parc-mackenzie-stone-wayfinding-signage.jpg" alt="Stunning Stone Wayfinding Signage at Parc Mackenzie" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/stunning-stone-wayfinding-signage-at-parc-mackenzie/">Stunning Stone Wayfinding Signage at Parc Mackenzie</a></h2>
+        <p class="card-excerpt">A bespoke stone wayfinding sign for Parc Mackenzie in Cardiff, combining craftsmanship and innovation with a timeless aesthetic that complements the park's natural surroundings.</p>
+        <div class="card-foot">
+          <time datetime="2024-05-23">23 May 2024</time>
+          <a href="/blog/stunning-stone-wayfinding-signage-at-parc-mackenzie/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/benefits-of-a-quality-stone-sign-for-your-business/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/MicrosoftTeams-image-34-scaled.jpg" alt="Benefits of a Quality Stone Sign for Your Business" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/benefits-of-a-quality-stone-sign-for-your-business/">Benefits of a Quality Stone Sign for Your Business</a></h2>
+        <p class="card-excerpt">A quality stone sign is more than a marker — it's a statement of excellence that serves as a timeless representation of your brand identity.</p>
+        <div class="card-foot">
+          <time datetime="2024-02-20">20 February 2024</time>
+          <a href="/blog/benefits-of-a-quality-stone-sign-for-your-business/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/natural-elegance-stone-plaques-for-businesses/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/Bolsova-House-business-plaque-stone-sign-2.jpg" alt="Natural Elegance — Stone Plaques for Businesses" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/natural-elegance-stone-plaques-for-businesses/">Natural Elegance — Stone Plaques for Businesses</a></h2>
+        <p class="card-excerpt">Stone plaques offer businesses a unique opportunity to make a lasting impression through timeless elegance, bespoke customisation, and enduring durability.</p>
+        <div class="card-foot">
+          <time datetime="2023-11-14">14 November 2023</time>
+          <a href="/blog/natural-elegance-stone-plaques-for-businesses/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/homefield-grange-magnetic-slate-board/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/welsh-riven-slate-magnetic-board.jpg" alt="Homefield Grange Magnetic Slate Board" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/homefield-grange-magnetic-slate-board/">Homefield Grange Magnetic Slate Board</a></h2>
+        <p class="card-excerpt">A bespoke magnetic Welsh riven slate notice board for Homefield Grange — combining traditional slate craftsmanship with practical modern functionality.</p>
+        <div class="card-foot">
+          <time datetime="2021-12-09">9 December 2021</time>
+          <a href="/blog/homefield-grange-magnetic-slate-board/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/the-roost-on-rock-road-slate-plaque/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/The-Roost-On-Rock-Road-Welsh-slate-business-plaque-on-white-brick.jpg" alt="The Roost on Rock Road Slate Plaque" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/the-roost-on-rock-road-slate-plaque/">The Roost on Rock Road Slate Plaque</a></h2>
+        <p class="card-excerpt">A Welsh slate plaque featuring the restaurant logo for The Roost on Rock Road — a gift celebrating success, crafted to last for years to come.</p>
+        <div class="card-foot">
+          <time datetime="2021-09-16">16 September 2021</time>
+          <a href="/blog/the-roost-on-rock-road-slate-plaque/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/homefield-grange-slate-plaques/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/Homefield-Grange-large-Welsh-slate-plaque.jpg" alt="Homefield Grange Slate Plaques" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/homefield-grange-slate-plaques/">Homefield Grange Slate Plaques</a></h2>
+        <p class="card-excerpt">Bespoke Welsh slate signage across the Homefield Grange wellness spa estate, from wayfinding plaques to room identifiers — each engraved with white enamel detailing.</p>
+        <div class="card-foot">
+          <time datetime="2021-09-08">8 September 2021</time>
+          <a href="/blog/homefield-grange-slate-plaques/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/trevalgan-touring-park/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/The-Trevalgan-main-welcome-sign-in-Welsh-slate-by-Stone-Sign.jpg" alt="Trevalgan Touring Park" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/trevalgan-touring-park/">Trevalgan Touring Park</a></h2>
+        <p class="card-excerpt">A comprehensive suite of Welsh slate wayfinding signage for Trevalgan Touring Park near St Ives, including an impressive two-metre entrance sign.</p>
+        <div class="card-foot">
+          <time datetime="2021-08-11">11 August 2021</time>
+          <a href="/blog/trevalgan-touring-park/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/tythegston-estate-business-plaques/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/Tythegston-Estate-Welsh-slate-hanging-business-plaque.jpg" alt="Tythegston Estate Business Plaques" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/tythegston-estate-business-plaques/">Tythegston Estate Business Plaques</a></h2>
+        <p class="card-excerpt">Bespoke Welsh slate wayfinding plaques for the Tythegston Estate near Bridgend — deeply engraved and hand-painted with white enamel for lasting outdoor durability.</p>
+        <div class="card-foot">
+          <time datetime="2021-07-30">30 July 2021</time>
+          <a href="/blog/tythegston-estate-business-plaques/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/st-fagans-cattery-custom-business-plaque/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/Stone-Sign-St-Fagans-Cattery-1.jpg" alt="St Fagans Cattery Custom Business Plaque" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/st-fagans-cattery-custom-business-plaque/">St Fagans Cattery Custom Business Plaque</a></h2>
+        <p class="card-excerpt">Two custom Welsh slate business plaques for St Fagans Cattery in Cardiff, featuring a hand-etched cat graphic and crisp white enamel lettering.</p>
+        <div class="card-foot">
+          <time datetime="2021-03-12">12 March 2021</time>
+          <a href="/blog/st-fagans-cattery-custom-business-plaque/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <a href="/blog/logo-engraving-for-stone-business-signs/" class="card-img">
+        <img src="https://stonesign.com/wp-content/uploads/Stone-sign-logo-engraving-for-stone-business-signs-5.jpg" alt="Logo Engraving for Stone Business Signs" width="800" height="533" loading="lazy" decoding="async">
+      </a>
+      <div class="card-body">
+        <span class="card-label">Stone Studio Signs</span>
+        <h2><a href="/blog/logo-engraving-for-stone-business-signs/">Logo Engraving for Stone Business Signs</a></h2>
+        <p class="card-excerpt">Your company logo carved into natural stone — from Welsh slate to Portland limestone — engraved and gilded to perfectly represent your brand.</p>
+        <div class="card-foot">
+          <time datetime="2021-01-14">14 January 2021</time>
+          <a href="/blog/logo-engraving-for-stone-business-signs/" class="card-read">Read &rarr;</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <footer>
+    <div class="c">
+      <div class="foot">
+        <span class="foot-note">Stone Studio Signs &middot; A division of Stone Studio &middot; Cardiff</span>
+        <div class="foot-links">
+          <a href="/#services">Services</a>
+          <a href="/blog/">Journal</a>
+          <a href="/#contact">Contact</a>
+          <a href="https://stone-studio-mu.vercel.app">Stone Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+  const burger=document.getElementById('burger');
+  const nav=document.getElementById('nav');
+  if(burger){
+    burger.addEventListener('click',()=>{const open=nav.classList.toggle('nav-open');burger.setAttribute('aria-expanded',open);});
+    nav.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('nav-open');burger.setAttribute('aria-expanded','false');}));
+    document.addEventListener('click',(e)=>{if(!nav.contains(e.target)){nav.classList.remove('nav-open');burger.setAttribute('aria-expanded','false');}});
+  }
+</script>
+</body>
+</html>
